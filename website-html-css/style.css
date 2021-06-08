@@ -36,6 +36,7 @@ a {
 
 a:hover {    
     color: #3e4149; 
+    text-decoration: none;
 }
 
 #banner {
@@ -58,12 +59,17 @@ a:hover {
 
 #footer {
     background-color: #3e4149;  
-    padding: 15px 0;  
-    text-align: center;
+    padding: 10px 0;  
+    text-align: center;    
 }
 
 #footer p {
     color: #ffc8c8;
+    padding: 8px;    
+}
+
+#footer a {
+    font-size: 20px;
 }
 
 #footer a:hover {
