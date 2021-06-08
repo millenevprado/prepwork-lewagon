@@ -28,15 +28,15 @@ h2 {
     font-weight: 300;      
 }
 
-a {
-    color: #ff9999d5;
+button {
+    padding: 10px;
+    background-color: #ff9999;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 0.5px #444f5a3f;
     font-weight: 700;
-    text-decoration: none;
-}
-
-a:hover {    
-    color: #3e4149; 
-    text-decoration: none;
+    color: #444f5a;
+    width: 110px;
 }
 
 #banner {
@@ -70,6 +70,9 @@ a:hover {
 
 #footer a {
     font-size: 20px;
+    color: #ff9999d5;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 #footer a:hover {
