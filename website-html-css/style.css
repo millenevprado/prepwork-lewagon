@@ -1,29 +1,33 @@
 body {
-    background-color: rbg(245,245,245);
-    color: green;
-    font-size: 25px;
-    font-family: Helvetica, sans-serif;
+    background-color: #ffc8c825;
+    color: rgb(30,30,30);    
+    font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-    font-family: Courier;
-    color: red;
-    font-weight: lighter;
-    font-size: 10px;
+h1 {    
+    color: #3e4149; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;   
+    font-size: 45px; 
 }
 
-h2 {
-    font-family: Courier;
-    color: pink;
-    font-weight: lighter;
-    font-size: 8px;
+p {
+    color: #444f5a;
+    font-weight: 400;
+}
+
+h2 {    
+    color: #ff9999;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;      
 }
 
 a {
-    color: yellow;
+    color: #ff9999d5;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-    color: purple;
+a:hover {    
+    color: #3e4149; 
 }
