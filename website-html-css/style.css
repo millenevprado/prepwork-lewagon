@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: #ffc8c825;
     color: rgb(30,30,30);    
@@ -8,7 +14,7 @@ h1 {
     color: #3e4149; 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;   
-    font-size: 45px; 
+    font-size: 50px; 
 }
 
 p {
@@ -32,3 +38,34 @@ a:hover {
     color: #3e4149; 
 }
 
+#banner {
+    background-image: url("images/banner.jpg");
+    background-size: cover;    
+    padding: 150px 0;
+    text-align: center;    
+}
+#banner h1 {
+    padding-bottom: 15px;
+}
+ #banner p {
+    padding-bottom: 15px;
+ }
+
+.card {
+    padding: 50px;
+    text-align: center;
+}
+
+#footer {
+    background-color: #3e4149;  
+    padding: 15px 0;  
+    text-align: center;
+}
+
+#footer p {
+    color: #ffc8c8;
+}
+
+#footer a:hover {
+    color: #ffc8c8;
+}
