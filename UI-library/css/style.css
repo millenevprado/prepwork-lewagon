@@ -9,6 +9,7 @@
 @import url("components/badge.css");
 @import url("components/banner.css");
 @import url("components/tabs.css");
+@import url("components/list.css");
 
 /* ----- Fonts ----- */
 * {
@@ -18,15 +19,22 @@
 } 
 
 body {
-    font-family: "Open Sans", "Helvetica";
-    padding-bottom: 50px;
-          
+    font-family: "Open Sans", "Helvetica";          
 }
 
 h1, h2, h3 {
     font-family: "Montserrat", "sans-serif"; 
     padding-bottom: 10px;  
     
+}
+
+footer {
+    background: #53443F;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px; 
 }
 
 
