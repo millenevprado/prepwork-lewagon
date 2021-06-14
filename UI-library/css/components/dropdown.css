@@ -1,0 +1,8 @@
+.dropdown-menu {
+    box-shadow: none;
+}
+
+.dropdown-menu a {
+    color: #999 !important;  /*!important sobrepõe a especifificade do seletor*/
+    font-weight: lighter;
+}
