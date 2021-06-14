@@ -24,8 +24,16 @@ body {
 
 h1, h2, h3 {
     font-family: "Montserrat", "sans-serif"; 
-    padding-bottom: 10px;  
-    
+    padding-bottom: 10px;      
+}
+
+.header {
+    background: #53443F;
+    padding: 25px;
+}
+.header h1{
+    text-align: center;
+    color: white;
 }
 
 footer {
@@ -35,6 +43,7 @@ footer {
     font-size: 14px;
     width: 100%;
     padding: 10px; 
+    margin-top: 10px;
 }
 
 
