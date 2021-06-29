@@ -2,7 +2,7 @@
 
 - git init: para criar o repositório 
 - git status: para ver o status dos arquivos; quais arquivos foram modificados etc.
-- git add <"nome do arquivo">:  para adicionar o arquivo; screenshot do arquivo
+- git add <"nome do arquivo">:  para adicionar o arquivo; snapshot do arquivo
 - git . : adiciona todos os arquivos
 - git commit --message <"mensagem">: mensagem que aparecerá no commit 
 - git commit -m <"mensagem">: 
