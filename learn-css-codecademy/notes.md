@@ -1,4 +1,4 @@
-# LEARN CSS - CODECADEMY
+# cLEARN CSS - CODECADEMY
 
 
 
@@ -205,3 +205,136 @@ Now take a look at the above CSS code. The *attribute selector* is used to targe
 - The second ruleset looks for an `img` element with an attribute of `src` that contains the string `'summer'`, and sets the `height` to `100px`.
 
 Notice how no new HTML markup (like a class or id) needed to be added, and we were still able to modify the styles of each image independently. This is one advantage to using the attribute selector!
+
+
+
+#### Pseudo-class
+
+You may have observed how the appearance of certain elements can change, or be in a different state, after certain user interactions. For instance:
+
+- When you click on an `<input>` element, and a blue border is added showing that it is in *focus*.
+- When you click on a blue `<a>` link to *visit* to another page, but when you return the link’s text is purple.
+- When you’re filling out a form and the submit button is grayed out and *disabled*. But when all of the fields have been filled out, the button has color showing that it’s *active*.
+
+These are all examples of pseudo-class selectors in action! In fact, `:focus`, `:visited`, `:disabled`, and `:active` are all pseudo-classes. Factors such as user interaction, site navigation, and position in the DOM can all give elements a different state with pseudo-class.
+
+A pseudo-class can be attached to any selector. It is always written as a colon `:` followed by a name. For example:
+
+```css
+p:hover {
+  background-color: lime;
+}
+```
+
+
+
+
+
+#### Classes and IDs
+
+CSS can select HTML elements by their type, class, and ID. CSS classes and IDs have different purposes, which can affect which one you use to style HTML elements.
+
+CSS classes are meant to be reused over many elements. By writing CSS classes, you can style elements in a variety of ways by mixing classes. For instance, imagine a page with two headlines. One headline needs to be bold and blue, and the other needs to be bold and green. Instead of writing separate CSS rules for each headline that repeat each other’s code, it’s better to write a `.bold` CSS rule, a `.green` CSS rule, and a `.blue` CSS rule. Then you can give one headline the `bold green` classes, and the other the `bold blue` classes.
+
+While classes are meant to be used many times, an ID is meant to style only one element. IDs override the styles of types and classes. Since IDs override these styles, they should be used sparingly and only on elements that need to always appear the same.
+
+
+
+#### Specificity
+
+Specificity is the order by which the browser decides which CSS styles will be displayed. A best practice in CSS is to style elements while using the lowest degree of specificity so that if an element needs a new style, it is easy to override.
+
+IDs are the most specific selector in CSS, followed by classes, and finally, type.
+
+To make styles easy to edit, it’s best to style with a type selector, if possible. If not, add a class selector. If that is not specific enough, then consider using an ID selector.
+
+
+
+#### Chanining
+
+When writing CSS rules, it’s possible to require an HTML element to have two or more CSS selectors at the same time.
+
+This is done by combining multiple selectors, which we will refer to as chaining. For instance, if there was a `special` class for `<h1>` elements, the CSS would look like below:
+
+```css
+h1.special{
+
+}
+```
+
+The code above would select only the `<h1>` elements with a class of `special`. If a `<p>` element also had a class of `special`, the rule in the example would not style the paragraph.
+
+
+
+#### Descendant Combinator
+
+In addition to chaining selectors to select elements, CSS also supports selecting elements that are nested within other HTML elements, also known as *descendants*. For instance, consider the following HTML:
+
+```html
+<ul class='main-list'>
+  <li> ... </li>
+  <li> ... </li>
+  <li> ... </li>
+</ul>
+```
+
+The nested `<li>` elements are descendants of the `<ul>` element and can be selected with the *descendant combinator* like so:
+
+```css
+.main-list li {
+ 
+}
+```
+
+In the example above, `.main-list` selects the element with the`.main-list` class (the `<ul>` element). The descendant `<li>`‘s are selected by adding `li` to the selector, separated by a space. This results in `.main-list li` as the final selector.
+
+Selecting elements in this way can make our selectors even more specific by making sure they appear in the context we expect.
+
+
+
+#### Chaining and Specificity
+
+Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.
+
+For instance, consider the following CSS: 
+
+```css
+p {
+  color: blue;
+}
+ 
+.main p {
+  color: red;
+}
+```
+
+Both of these CSS rules define what a `<p>` element should look like. Since `.main p` has a class and a `p` type as its selector, only the `<p>` elements inside the `.main` element will appear `red`. This occurs despite there being another more general rule that states `<p>` elements should be `blue`.
+
+
+
+#### Multiple Selectors
+
+In order to make CSS more concise, it’s possible to add CSS styles to multiple CSS selectors all at once. This prevents writing repetitive code.
+
+For instance, the following code has repetitive style attributes:
+
+```css
+h1 {
+  font-family: 'Georgia';
+}
+ 
+.menu {
+  font-family: 'Georgia';
+}
+```
+
+Instead of writing `font-family: Georgia` twice for two selectors, we can separate the selectors by a comma to apply the same style to both, like this:
+
+```css
+h1, 
+.menu {
+  font-family: 'Georgia';
+}
+```
+
+By separating the CSS selectors with a comma, both the `<h1>` elements and the elements with the `menu` class will receive the `font-family: Georgia` styling.
