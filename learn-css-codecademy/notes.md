@@ -1,4 +1,4 @@
-# cLEARN CSS - CODECADEMY
+# cccLEARN CSS - CODECADEMY
 
 
 
@@ -142,9 +142,7 @@ Then, you could include both of these classes on one HTML element like this:
 
 We can add multiple classes to an HTML element’s `class` attribute by separating them with a space. This enables us to mix and match CSS classes to create many unique styles without writing a custom class for every style combination needed.
 
-
-
-### ID
+#### ID
 
 Oftentimes it’s important to select a single element with CSS to give it its own unique style. If an HTML element needs to be styled uniquely, we can give it an ID using the `id` attribute.
 
@@ -338,3 +336,213 @@ h1,
 ```
 
 By separating the CSS selectors with a comma, both the `<h1>` elements and the elements with the `menu` class will receive the `font-family: Georgia` styling.
+
+
+
+### The Box Model
+
+Browsers load HTML elements with default position values. This often leads to an unexpected and unwanted user experience while limiting the views you can create. In this lesson, you will learn about the *box model*, an important concept to understand how elements are positioned and displayed on a website.
+
+If you have used HTML and CSS, you have unknowingly seen aspects of the box model. For example, if you have set the background color of an element, you may have noticed that the color was applied not only to the area directly behind the element but also to the area to the right of the element. Also, if you have aligned text, you know it is aligned relative to something. What is that something?
+
+All elements on a web page are interpreted by the browser as “living” inside of a box. This is what is meant by the box model.
+
+For example, when you change the background color of an element, you change the background color of its entire box.
+
+![](images/box-model.png)
+
+
+
+The box model comprises the set of properties that define parts of an element that take up space on a web page. The model includes the content area’s size (*width* and *height*) and the element’s *padding*, *border*, and *margin*. The properties include:
+
+1. `width` and `height`: The width and height of the content area.
+2. `padding`: The amount of space between the content area and the border.
+3. `border`: The thickness and style of the border surrounding the content area and padding.
+4. `margin`: The amount of space between the border and the outside edge of the element.
+
+
+
+#### Height and Width
+
+An element’s content has two dimensions: a height and a width. By default, the dimensions of an HTML box are set to hold the raw contents of the box.
+
+The CSS `height` and `width` properties can be used to modify these default dimensions.
+
+```css
+p {
+  height: 80px;
+  width: 240px;
+}
+```
+
+In this example, the `height` and `width` of paragraph elements are set to 80 pixels and 240 pixels, respectively — the `px` in the code above stands for *pixels*.
+
+Pixels allow you to set the exact size of an element’s box (width and height). When the width and height of an element are set in pixels, it will be the same size on all devices — an element that fills a laptop screen will overflow a mobile screen.
+
+
+
+#### Borders
+
+A *border* is a line that surrounds an element, like a frame around a painting. Borders can be set with a specific `width`, `style`, and `color`:
+
+- `width`—The thickness of the border. A border’s thickness can be set in pixels or with one of the following keywords: `thin`, `medium`, or `thick`.
+- `style`—The design of the border. Web browsers can render any of [10 different styles](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#Values). Some of these styles include: `none`, `dotted`, and `solid`.
+- `color`—The color of the border. Web browsers can render colors using a few different formats, including [140 built-in color keywords](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
+
+
+
+```css
+p {
+  border: 3px solid coral;
+}
+```
+
+In the example above, the border has a width of 3 pixels, a style of `solid`, and a color of `coral`. All three properties are set in one line of code.
+
+The default border is `medium none color`, where `color` is the current color of the element. If `width`, `style`, or `color` are not set in the CSS file, the web browser assigns the default value for that property.
+
+```css
+p.content-header {
+  height: 80px;
+  width: 240px;
+  border: solid coral;
+}
+```
+
+In this example, the border style is set to `solid` and the color is set to `coral`. The width is not set, so it defaults to `medium`.
+
+
+
+#### Border Radius
+
+You can modify the corners of an element’s border box with the `border-radius` property.
+
+```css
+div.container {
+  border: 3px solid blue;
+  border-radius: 5px;
+}
+```
+
+The code in the example above will set *all four corners* of the border to a radius of 5 pixels (i.e. the same curvature that a circle with a radius of 5 pixels would have).
+
+You can create a border that is a perfect circle by first creating an element with the same width and height, and then setting the radius equal to half the width of the box, which is 50%.
+
+```css
+div.container {
+  height: 60px;
+  width: 60px;
+  border: 3px solid blue;
+  border-radius: 50%;
+}
+```
+
+The code in the example above creates a `<div>` that is a perfect circle.
+
+
+
+#### Padding
+
+The space between the contents of a box and the borders of a box is known as *padding*. Padding is like the space between a picture and the frame surrounding it. In CSS, you can modify this space with the `padding` property.
+
+```css
+p.content-header {
+  border: 3px solid coral;
+  padding: 10px;
+}
+```
+
+The code in this example puts 10 pixels of space between the content of the paragraph (the text) and the borders, on all four sides.
+
+The `padding` property is often used to expand the background color and make the content look less cramped.
+
+If you want to be more specific about the amount of padding on each side of a box’s content, you can use the following properties:
+
+- `padding-top`
+- `padding-right`
+- `padding-bottom`
+- `padding-left`
+
+Each property affects the padding on only one side of the box’s content, giving you more flexibility in customization.
+
+#### Padding Shorthand
+
+Another implementation of the `padding` property lets you specify exactly how much padding there should be on each side of the content in a single declaration. A declaration that uses multiple properties as values is known as a *shorthand property*.
+
+Padding shorthand lets you specify all of the `padding` properties as values on a single line:
+
+- `padding-top`
+- `padding-right`
+- `padding-bottom`
+- `padding-left`
+
+You can specify these properties in a few different ways:
+
+**4 Values**
+
+```css
+p.content-header {
+  padding: 6px 11px 4px 9px;
+}
+```
+
+In the example above, the four values `6px 11px 4px 9px` correspond to the amount of padding on each side, in a clockwise rotation. In order, it specifies the padding-top value (`6px`), the padding-right value (`11px`), the padding-bottom value (`4px`), and the padding-left value (`9px`) of the content.
+
+**3 Values**
+
+```css
+p.content-header {
+  padding: 5px 10px 20px;
+}
+```
+
+If the left and right sides of the content can be equal, the padding shorthand property allows for 3 values to be specified. The first value sets the padding-top value (`5px`), the second value sets the padding-left and padding-right values (`10px`), and the third value sets the padding-bottom value (`20px`).
+
+**2 Values**
+
+```css
+p.content-header {
+  padding: 5px 10px;
+}
+```
+
+And finally, if the top and bottom sides can be equal, and the left and right sides can be equal, you can specify 2 values. The first value sets the padding-top and padding-bottom values (`5px`), and the second value sets the padding-left and padding-right values (`10px`).
+
+#### Margin
+
+Margin refers to the space directly outside of the box. The `margin` property is used to specify the size of this space.
+
+```css
+p {
+  border: 1px solid aquamarine;
+  margin: 20px;
+}
+```
+
+The code in the example above will place 20 pixels of space on the outside of the paragraph’s box on all four sides. This means that other HTML elements on the page cannot come within 20 pixels of the paragraph’s border.
+
+If you want to be even more specific about the amount of margin on each side of a box, you can use the following properties:
+
+- `margin-top`
+- `margin-right`
+- `margin-bottom`
+- `margin-left`
+
+Each property affects the margin on only one side of the box, providing more flexibility in customization.
+
+#### Margin Auto
+
+The `margin` property also lets you center content. However, you must follow a few syntax requirements. Take a look at the following example:
+
+```css
+div.headline {
+  width: 400px;
+  margin: 0 auto;
+}
+```
+
+In the example above, `margin: 0 auto;` will center the divs in their containing elements. The 0 sets the top and bottom margins to 0 pixels. The `auto` value instructs the browser to adjust the left and right margins until the element is centered within its containing element.
+
+In order to center an element, a width must be set for that element. Otherwise, the width of the div will be automatically set to the full width of its containing element, like the `<body>`, for example. It’s not possible to center an element that takes up the full width of the page, since the width of the page can change due to display and/or browser window size.
+
+In the example above, the width of the `div` is set to 400 pixels, which is less than the width of most screens. This will cause the div to center within a containing element that is greater than 400 pixels wide.
