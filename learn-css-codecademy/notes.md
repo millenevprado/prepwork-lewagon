@@ -546,3 +546,153 @@ In the example above, `margin: 0 auto;` will center the divs in their containing
 In order to center an element, a width must be set for that element. Otherwise, the width of the div will be automatically set to the full width of its containing element, like the `<body>`, for example. It’s not possible to center an element that takes up the full width of the page, since the width of the page can change due to display and/or browser window size.
 
 In the example above, the width of the `div` is set to 400 pixels, which is less than the width of most screens. This will cause the div to center within a containing element that is greater than 400 pixels wide.
+
+
+
+#### Margin Collapse
+
+As you have seen, padding is space added inside an element’s border, while margin is space added outside an element’s border. One additional difference is that top and bottom margins, also called vertical margins, *collapse*, while top and bottom padding does not.
+
+
+
+![](images/margin-collapse.png)
+
+Horizontal margins (left and right), like padding, are always displayed and added together. For example, if two divs with ids `#div-one` and `#div-two`, are next to each other, they will be as far apart as the sum of their adjacent margins.
+
+```css
+#img-one {
+  margin-bottom: 30px;
+}
+ 
+#img-two {
+  margin-top: 20px;
+}
+```
+
+In this example, the vertical margin between the `#img-one` and `#img-two` elements is 30 pixels. Although the sum of the margins is 50 pixels, the margin collapses so the spacing is only dependent on the `#img-one` bottom margin.
+
+It may be helpful to think of collapsing vertical margins as a short person trying to push a taller person. The tall person has longer arms and can easily push the short person, while the person with short arms cannot reach the person with long arms.
+
+#### Minimum and Maximum Height and Width
+
+Because a web page can be viewed through displays of differing screen size, the content on the web page can suffer from those changes in size. To avoid this problem, CSS offers two properties that can limit how narrow or how wide an element’s box can be sized to:
+
+- `min-width`—this property ensures a minimum width of an element’s box.
+- `max-width`—this property ensures a maximum width of an element’s box.
+
+```css
+p {
+  min-width: 300px;
+  max-width: 600px;
+}
+```
+
+In the example above, the width of all paragraphs will not shrink below 300 pixels, nor will the width exceed 600 pixels.
+
+Content, like text, can become difficult to read when a browser window is narrowed or expanded. These two properties ensure that content is legible by limiting the minimum and maximum widths of an element.
+
+You can also limit the minimum and maximum *height* of an element:
+
+- `min-height` — this property ensures a minimum height for an element’s box.
+- `max-height` — this property ensures a maximum height of an element’s box.
+
+```css
+p {
+  min-height: 150px;
+  max-height: 300px;
+}
+```
+
+In the example above, the height of all paragraphs will not shrink below 150 pixels and the height will not exceed 300 pixels.
+
+What will happen to the contents of an element’s box if the `max-height` property is set too low? It’s possible for the content to spill outside of the box, resulting in content that is not legible. 
+
+
+
+#### Overflow
+
+All of the components of the box model comprise an element’s size. For example, an image that has the following dimensions is 364 pixels wide and 244 pixels tall.
+
+- 300 pixels wide
+- 200 pixels tall
+- 10 pixels padding on the left and right
+- 10 pixels padding on the top and bottom
+- 2 pixels border on the left and right
+- 2 pixels border on the top and bottom
+- 20 pixels margin on the left and right
+- 10 pixels margin on the top and bottom
+
+The total dimensions (364px by 244px) are calculated by adding all of the vertical dimensions together and all of the horizontal dimensions together. Sometimes, these components result in an element that is larger than the parent’s containing area.
+
+How can we ensure that we can view all of an element that is larger than its parent’s containing area?
+
+The `overflow` property controls what happens to content that spills, or overflows, outside its box. The most commonly used values are:
+
+- `hidden`—when set to this value, any content that overflows will be hidden from view.
+- `scroll`—when set to this value, a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.
+- `visible`—when set to this value, the overflow content will be displayed outside of the containing element. **Note, this is the default value.**
+
+```css
+p {
+  overflow: scroll; 
+}
+```
+
+In the example above, if any of the paragraph content overflows (perhaps a user resizes their browser window), a scrollbar will appear so that users can view the rest of the content.
+
+The overflow property is set on a parent element to instruct a web browser on how to render child elements. For example, if a div’s overflow property is set to `scroll`, all children of this div will display overflowing content with a scroll bar.
+
+For a more in-depth look at `overflow`, including additional properties like `overflow-x` and `overflow-y` that separate out the horizontal and vertical values, head over to the MDN [documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
+
+
+
+#### Resetting Defaults
+
+All major web browsers have a default stylesheet they use in the absence of an external stylesheet. These default stylesheets are known as *user agent stylesheets*. In this case, the term *[user agent](https://en.wikipedia.org/wiki/User_agent)* is a technical term for the browser.
+
+User agent stylesheets often have default CSS rules that set default values for padding and margin. This affects how the browser displays HTML elements, which can make it difficult for a developer to design or style a web page.
+
+Many developers choose to reset these default values so that they can truly work with a clean slate.
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+The code in the example above resets the default margin and padding values of all HTML elements. It is often the first CSS rule in an external stylesheet.
+
+> Note that both properties are both set to `0`. When these properties are set to `0`, they do not require a unit of measurement.
+
+
+
+#### Visibility
+
+Elements can be hidden from view with the `visibility` property.
+
+The `visibility` property can be set to one of the following values:
+
+- `hidden` — hides an element.
+- `visible` — displays an element.
+- `collapse` — collapses an element.
+
+```html
+<ul>
+  <li>Explore</li>
+  <li>Connect</li>
+  <li class="future">Donate</li>
+</ul>
+```
+
+```css
+.future {
+  visibility: hidden;
+}
+```
+
+In the example above, the list item with a class of `future` will be hidden from view in the browser.
+
+Keep in mind, however, that users can still view the contents of the list item (e.g., `Donate`) by viewing the source code in their browser. Furthermore, the web page will *only* hide the contents of the element. It will still leave an empty space where the element is intended to display.
+
+> **Note:** What’s the difference between `display: none` and `visibility: hidden`? An element with `display: none` will be completely removed from the web page. An element with `visibility: hidden`, however, will not be visible on the web page, but the space reserved for it will.
