@@ -776,3 +776,95 @@ h1 {
 ```
 
 In the example above, the height of the box would remain at 200 pixels and the width would remain at 300 pixels. The border thickness and padding would remain entirely *inside* of the box.
+
+
+
+### DISPLAY AND POSITIONING
+
+#### Flow of HTML
+
+A browser will render the elements of an HTML document that has no CSS from left to right, top to bottom, in the same order as they exist in the document. This is called the *flow* of elements in HTML.
+
+In addition to the properties that it provides to style HTML elements, CSS includes properties that change how a browser *positions* elements. These properties specify where an element is located on a page, if the element can share lines with other elements, and other related attributes.
+
+There are five properties for adjusting the position of HTML elements in the browser:
+
+- `position`
+- `display`
+- `z-index`
+- `float`
+- `clear`
+
+Each of these properties will allow us to position and view elements on a web page. They can be used in conjunction with any other styling properties you may know.
+
+
+
+#### Position
+
+Take a look at the *block-level* elements in the image below:
+
+![](images/position.png)
+
+Block-level elements like these boxes create a *block* the full width of their parent elements, and they prevent other elements from appearing in the same horizontal space.
+
+Notice the block-level elements in the image above take up their own line of space and therefore don’t overlap each other. In the browser to the right, you can see block-level elements also consistently appear on the left side of the browser. This is the default *position* for block-level elements.
+
+The default position of an element can be changed by setting its `position` property. The `position` property can take one of five values:
+
+- `static` - the default value (it does not need to be specified)
+- `relative`
+- `absolute`
+- `fixed`
+- `sticky`
+
+
+
+#### Position: Relative
+
+One way to modify the default position of an element is by setting its `position` property to `relative`.
+
+This value allows you to position an element *relative* to its default static position on the web page.
+
+```css
+.green-box {
+  background-color: green;
+  position: relative;
+}
+```
+
+Although the code in the example above instructs the browser to expect a relative positioning of the `.green-box` element, it does not specify where the `.green-box` element should be positioned on the page. This is done by accompanying the `position` declaration with one or more of the following *offset properties* that will move the element away from its default static position:
+
+- `top` - moves the element down from the top.
+- `bottom` - moves the element up from the bottom.
+- `left` - moves the element away from the left side (to the right).
+- `right` - moves the element away from the right side (to the left).
+
+You can specify values in pixels, ems, or percentages, among others, to dial in exactly how far you need the element to move. It’s also important to note that offset properties will not work if the element’s `position` property is the default `static`.
+
+```css
+.green-box {
+  background-color: green;
+  position: relative;
+  top: 50px;
+  left: 120px;
+}
+```
+
+In the example above, the element of `green-box` class will be moved down 50 pixels, and to the right 120 pixels, from its default static position. The image below displays the new position of the box.
+
+![](images/position-relative.png)
+
+Offsetting the relative element will not affect the positioning of other elements.
+
+
+
+#### Position: Absolute
+
+Another way of modifying the position of an element is by setting its position to `absolute`.
+
+When an element’s position is set to `absolute`, all other elements on the page will ignore the element and act like it is not present on the page. The element will be positioned relative to its closest positioned parent element, while offset properties can be used to determine the final position from there. Take a look at the image below:
+
+![](images/position-absolute.png)
+
+The “Website building in progress. Please come back later!” text is displaced from its static position at the top left corner of its parent container. It has offset property declarations of `top: 300px;` and `right: 0;`, positioning it 300 pixels down, and 0 pixels from the right side of the page.
+
