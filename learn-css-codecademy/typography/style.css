@@ -1,0 +1,117 @@
+html {
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #F2F2F2;
+    text-align: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #FFF;
+    font-size: 14px;
+}
+
+.header li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.header a {
+    color: #4A4A4A;
+    text-decoration: none;
+}
+
+a.home {
+    color: #4D00FF;
+}
+
+.banner {
+    margin-top: 74px;
+    padding: 40px 0 100px 0;
+    background-color: #4D00FF;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 28px;
+    color: #FFF;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.banner p {
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    color: #FFF;
+    
+}
+
+p {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 25px;
+}
+
+.editorial {
+    padding-bottom: 40px;
+    color: #717171;
+}
+
+h2 {
+    padding: 40px 20px 0 20px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.font-card {
+    padding: 10px 0 40px 0;
+    background-color: #FFF;    
+}
+
+.font-card .creator {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: .1em;
+}
+
+.sample {
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+.sample .text {
+    color: #4D00FF;
+    font-size: 100px;
+}
+
+.garamond {
+    font-family: Garamond;
+}
+
+.helvetica {
+    font-family: Helvetica;
+}
+
+.space {
+    font-family: monospace;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.regular {
+    font-weight: normal;
+}
+
+.italic {
+    font-weight: normal;
+    font-style: italic;
+}
