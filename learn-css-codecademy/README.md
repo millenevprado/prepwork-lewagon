@@ -1,4 +1,4 @@
-# LEARN CSS - CODECADEMY 
+# LEARN CSS - CODECADEMY :computer:
 
 [Learn CSS](https://www.codecademy.com/learn/learn-css?language_code=en) - Learn how to style and visually organize HTML with CSS.
 
