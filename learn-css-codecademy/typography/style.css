@@ -100,8 +100,8 @@ h2 {
     font-family: Helvetica;
 }
 
-.space {
-    font-family: monospace;
+.monospaced {
+    font-family: 'Space Mono', monospace;
 }
 
 .bold {
