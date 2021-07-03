@@ -10,7 +10,7 @@
 
 [THE BOX MODEL](#the-box-model)
 
-[CHANGING THE BOX MODEL](#chaging-the-box-model)
+[CHANGING THE BOX MODEL](#changing-the-box-model)
 
 [DISPLAY AND POSITIONING](#display-and-positioning)
 
