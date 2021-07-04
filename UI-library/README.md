@@ -1,6 +1,6 @@
 # WEB COMPONENTS
 
-In this course, I built my own UI libary with CSS:
+In this course, I built my own UI library with CSS:
 
 ![](images/webpage.png)
 
