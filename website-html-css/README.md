@@ -1,8 +1,10 @@
 # THE 2-HOUR LANDING PAGE 
 
-In this course, I created my first website using HTML and CSS.
+In this course, I created a website using HTML and CSS:
 
 ![](page.png)
+
+
 
 ## Resources
 
@@ -11,3 +13,4 @@ In this course, I created my first website using HTML and CSS.
 - Colors: [Colorzilla](http://www.colorzilla.com/chrome/), [Coolors](https://coolors.co/), [Color Hunt](http://colorhunt.co/)
 - Background images: [Pexels](https://www.pexels.com/)
 - CSS libraries: [Bootstrap](http://getbootstrap.com/), [Material Design](https://material.google.com/)
+- Workshop video: [Build your website with HTML & CSS](https://www.youtube.com/watch?v=-9ZheXYOMeM&t=12s)
