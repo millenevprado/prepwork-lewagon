@@ -2,7 +2,7 @@
 
 [Learn JavaScript](https://www.codecademy.com/learn/introduction-to-javascript?language_code=en) - Learn the JavaScript fundamentals you’ll need for front-end or back-end development.
 
-## ÍNDICE
+## CONTENTS
 
 [INTRODUCTION TO JAVASCRIPT](#introduction-js)
 

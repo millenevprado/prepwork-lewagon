@@ -2,7 +2,7 @@
 
 [Learn CSS](https://www.codecademy.com/learn/learn-css?language_code=en) - Learn how to style and visually organize HTML with CSS.
 
-## ÍNDICE
+## CONTENTS
 
 [CSS ANATOMY](#css-anatomy)
 
