@@ -1183,3 +1183,109 @@ In the example above, we log `newYearsResolutions.length` to the console using t
 - Since `newYearsResolution` has two elements, so `2` would be logged to the console.
 
 When we want to know how many elements are in an array, we can access the `.length` property
+
+### The .push() Method
+
+Let’s learn about some built-in JavaScript methods that make working with arrays easier. These methods are specifically called on arrays to make common tasks, like adding and removing elements, more straightforward.
+
+One method, `.push()` allows us to add items to the end of an array. Here is an example of how this is used:
+
+```javascript
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+ 
+itemTracker.push('item 3', 'item 4');
+ 
+console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+```
+
+So, how does `.push()` work?
+
+- We access the `push` method by using dot notation, connecting `push` to `itemTracker` with a period.
+- Then we call it like a function. That’s because `.push()` is a function and one that JavaScript allows us to use right on an array.
+- `.push()` can take a single argument or multiple arguments separated by commas. In this case, we’re adding two elements: `'item 3'` and `'item 4'` to `itemTracker`.
+- Notice that `.push()` changes, or *mutates*, `itemTracker`. You might also see `.push()` referred to as a *destructive* array method since it changes the initial array.
+
+If you’re looking for a method that will mutate an array by adding elements to it, then `.push()` is the method for you!
+
+### The .pop() Method
+
+Another array method, `.pop()`, removes the last item of an array.
+
+```javascript
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+ 
+const removed = newItemTracker.pop();
+ 
+console.log(newItemTracker); 
+// Output: [ 'item 0', 'item 1' ]
+console.log(removed);
+// Output: item 2
+```
+
+- In the example above, calling `.pop()` on the `newItemTracker` array removed `item 2` from the end.
+- `.pop()` does not take any arguments, it simply removes the last element of `newItemTracker`.
+- `.pop()` returns the value of the last element. In the example, we store the returned value in a variable `removed` to be used for later.
+- `.pop()` is a method that mutates the initial array.
+
+When you need to mutate an array by removing the last element, use `.pop()`.
+
+### More Array Methods
+
+There are many more array methods than just `.push()` and `.pop()`. You can read about all of the array methods that exist on the [Mozilla Developer Network (MDN) array documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
+`.pop()` and `.push()` mutate the array on which they’re called. However, there are times that we don’t want to mutate the original array and we can use non-mutating array methods. Be sure to check MDN to understand the behavior of the method you are using.
+
+Some arrays methods that are available to JavaScript developers include: `.join()`, `.slice()`, `.splice()`, `.shift()`, `.unshift()`, and `.concat()` amongst many others. Using these built-in methods make it easier to do some common tasks when working with arrays.
+
+### Arrays and Functions
+
+Throughout the lesson we went over arrays being mutable, or changeable. Well what happens if we try to change an array inside a function? Does the array keep the change after the function call or is it scoped to inside the function?
+
+Take a look at the following example where we call `.push()` on an array inside a function. Recall, the `.push()` method mutates, or changes, an array:
+
+```javascript
+const flowers = ['peony', 'daffodil', 'marigold'];
+ 
+function addFlower(arr) {
+  arr.push('lily');
+}
+ 
+addFlower(flowers);
+ 
+console.log(flowers); // Output: ['peony', 'daffodil', 'marigold', 'lily']
+```
+
+- The `flowers` array that has 3 elements.
+- The function `addFlower()` has a parameter of `arr` uses `.push()` to add a `'lily'` element into `arr`.
+- We call `addFlower()` with an argument of `flowers` which will execute the code inside `addFlower`.
+- We check the value of `flowers` and it now includes the `'lily'` element! The array was mutated!
+
+So when you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as *pass-by-reference* since what we’re actually passing the function is a reference to where the variable memory is stored and changing the memory.
+
+### Nested Arrays
+
+Earlier we mentioned that arrays can store other arrays. When an array contains another array it is known as a *nested array*. Examine the example below:
+
+```javascript
+const nestedArr = [[1], [2, 3]];
+```
+
+To access the nested arrays we can use bracket notation with the index value, just like we did to access any other element:
+
+```javascript
+const nestedArr = [[1], [2, 3]];
+ 
+console.log(nestedArr[1]); // Output: [2, 3]
+```
+
+Notice that `nestedArr[1]` will grab the element in index 1 which is the array `[2, 3]`. Then, if we wanted to access the elements within the nested array we can *chain*, or add on, more bracket notation with index values.
+
+```javascript
+const nestedArr = [[1], [2, 3]];
+ 
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+```
+
+In the second `console.log()` statement, we have two bracket notations chained to `nestedArr`. We know that `nestedArr[1]` is the array `[2, 3]`. Then to grab the first element from that array, we use `nestedArr[1][0]` and we get the value of `2`.
