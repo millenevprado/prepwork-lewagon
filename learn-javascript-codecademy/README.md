@@ -14,6 +14,8 @@
 
 [SCOPE](#scope)
 
+[ARRAYS](#arrays)
+
 <h2> <a name = "introduction-js"></a>INTRODUCTION TO JAVASCRIPT </h2>
 
 ### Console
@@ -1075,3 +1077,109 @@ Here, you’ll notice:
 - While we use block scope, we still pollute our namespace by reusing the same variable name twice. A better practice would be to rename the variable inside the block.
 
 Block scope is a powerful tool in JavaScript, since it allows us to define variables with precision, and not pollute the global namespace. If a variable does not need to exist outside a block— it shouldn’t!
+
+<h2> <a name = "arrays"></a>ARRAYS</h2>
+
+Organizing and storing data is a foundational concept of programming.
+
+One way we organize data in real life is by making lists. Let’s make one here:
+
+```
+New Year's Resolutions:
+
+1. Keep a journal 
+2. Take a falconry class
+3. Learn to juggle
+```
+
+Let’s now write this list in JavaScript, as an *array*:
+
+```javascript
+let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+```
+
+Arrays are JavaScript’s way of making lists. Arrays can store any data types (including strings, numbers, and booleans). Like lists, arrays are ordered, meaning each item has a numbered position.
+
+### Create an Array
+
+One way we can create an array is to use an *array literal*. An array literal creates an array by wrapping items in square brackets `[]`. Remember from the previous exercise, arrays can store any data type — we can have an array that holds all the same data types or an array that holds different data types.
+
+![](images/array-literals.png)
+
+Let’s take a closer look at the syntax in the array example:
+
+- The array is represented by the square brackets `[]` and the content inside.
+- Each content item inside an array is called an *element*.
+- There are three different elements inside the array.
+- Each element inside the array is a different data type.
+
+We can also save an array to a variable. You may have noticed we did this in the previous exercise:
+
+```javascript
+let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+```
+
+### Accessing Elements
+
+Each element in an array has a numbered position known as its *index*. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position.
+
+Arrays in JavaScript are *zero-indexed*, meaning the positions start counting from `0` rather than `1`. Therefore, the first item in an array will be at position `0`. Let’s see how we could access an element in an array:
+
+![](images/array-index.png)
+
+In the code snippet above:
+
+- `cities` is an array that has three elements.
+- We’re using bracket notation, `[]` with the index after the name of the array to access the element.
+- `cities[0]` will access the element at index `0` in the array `cities`. You can think of `cities[0]` as accessing the space in memory that holds the string `'New York'`.
+
+You can also access individual characters in a string using bracket notation and the index. For instance, you can write:
+
+```javascript
+const hello = 'Hello World';
+console.log(hello[6]);
+// Output: W
+```
+
+### Update Elements
+
+In the previous exercise, you learned how to access elements inside an array or a string by using an index. Once you have access to an element in an array, you can update its value.
+
+```javascript
+let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
+ 
+seasons[3] = 'Autumn';
+console.log(seasons); 
+//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
+```
+
+In the example above, the `seasons` array contained the names of the four seasons.
+
+However, we decided that we preferred to say `'Autumn'` instead of `'Fall'`.
+
+The line, `seasons[3] = 'Autumn';` tells our program to change the item at index 3 of the `seasons` array to be `'Autumn'` instead of what is already there.
+
+### Arrays with let and const
+
+You may recall that you can declare variables with both the `let` and `const` keywords. Variables declared with `let` can be reassigned.
+
+Variables declared with the `const` keyword cannot be reassigned. However, elements in an array declared with `const` remain mutable. Meaning that we can change the contents of a `const` array, but cannot reassign a new array or a different value.
+
+### The .length property
+
+One of an array’s built-in properties is `length` and it returns the number of items in the array. We access the `.length` property just like we do with strings. Check the example below:
+
+```javascript
+const newYearsResolutions = ['Keep a journal', 'Take a falconry class'];
+ 
+console.log(newYearsResolutions.length);
+// Output: 2
+```
+
+In the example above, we log `newYearsResolutions.length` to the console using the following steps:
+
+- We use *dot notation*, chaining a period with the property name to the array, to access the `length` property of the `newYearsResolutions` array.
+- Then we log the `length` of `newYearsResolution` to the console.
+- Since `newYearsResolution` has two elements, so `2` would be logged to the console.
+
+When we want to know how many elements are in an array, we can access the `.length` property
