@@ -44,5 +44,21 @@ The workflow that GitHub has defined is based on using Branching and Pull Reques
 
 After the changes have been made, and we've made sure they are working on the computer, we can deploy the work. 
 
-At Le Wagon they use [Heroku](https://www.heroku.com/), which hosts the code in the cloud so that the content is visible to customers accessing the site.
+At Le Wagon they use [Heroku](https://www.heroku.com/), which hosts the code in the cloud so that the content is visible to customers accessing the site (it's a server). 
 
+![](images/deployment-heroku.png)
+
+In the GitHub workflow, we have a rule, which must be respected: "**ANYTHING IN THE MASTER BRANCH IS DEPLOYABLE**." When we merge the code into the master, we have to make sure the code is running correctly.
+
+### Continuous Deployment
+
+- Deploy your app in production with quick command lines.
+- Continuous delivery ensures minimal impact from bugs, and fast feedback from users.
+
+### Automated Deployment
+
+A tool to automatically deploy at every change of the master branch. 
+
+![](images/deployment-automatic-deploys.png)
+
+![](images/deployment-merge-button.png)
