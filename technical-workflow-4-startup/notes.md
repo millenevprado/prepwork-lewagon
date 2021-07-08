@@ -63,6 +63,17 @@ A tool to automatically deploy at every change of the master branch.
 
 ![](images/deployment-merge-button.png)
 
-With this kind of process, we can ship really often. But this can cause some problems. For example, if you have 10 deploys, some might break.
+With this kind of process, we can ship really often. But this can cause some problems. For example, if you have 10 deploys per day, some might break, which is not good for startups (we can't break stuff in this case).
 
 ![](images/deployment-break.png)
+
+And if we break something, we can just **ROLLBACK**, reverting the code to where it was before it broke.
+
+<h2> <a name = "testing"></a>TESTING</h2>
+
+How can we prevent breaking things? We can prevent TESTING!
+
+When we have a site with many features, we can write a code to automate the test and check when a change is made (a new feature is added), if this change hasn't affected any of the other features. **The best practice is to write a test code to every feature**.
+
+### Travis CI
+
