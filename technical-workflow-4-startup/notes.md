@@ -1,0 +1,42 @@
+# TECHNICAL WORKFLOW FOR A STARTUP :briefcase:
+
+Workshop video: [Technical Workflow for a Startup](https://www.youtube.com/watch?v=iZkP9rcEJEM&t=12s)
+
+<h2> <a name = "startup"></a>STARTUP</h2>
+
+A startup is a temporary organization formed to search for a repeatable and scalable business model (STEVE BLANK, 2010). Once you find a business model, you're no longer a startup.
+
+<h2> <a name = "versioning"></a>VERSIONING</h2>
+
+Backup versions of your work and track modifications (here, we add check-points to the code/work). With GitHub we can have a Timeline to track the work. 
+
+### How to Read a Repository
+
+- See the contributors (who is working on the code)
+- Take a look at the commits (the check-points of the code)
+- See the code
+
+<h2> <a name = "workflow"></a>WORKFLOW</h2>
+
+The workflow that GitHub has defined is based on using Branching and Pull Requests. To add a feature that you want to implement inside the project, we can Branching and Pull Requests. So, how does it work? 
+
+- CREATE A BRANCH: we create it to make the changes that we want. We don't make the changes directly on the master, we work on the **branch** first.
+
+  ![](images/workflow-create-a-branch.png)
+
+- WORK AND COMMIT:
+
+  ![](images/workflow-work-and-commit.png)
+
+- OPEN A PULL REQUEST: submit your work on GitHub through **pull requests**. Write a clear and objective message, if possible, with screenshots of the changes that have been made.
+
+  ![](images/workflow-pull-request.png)
+
+- REVIEW: After making all the changes I wanted, I now want someone to take a look at my work, to review the code. Revisions are important because we want the code to look like it was written by a single person.
+
+  ![](images/workflow-review.png)
+
+- MERGE: after the revision and all changes have been made, it is possible to merge the work into the master (to the main line).
+
+  ![](images/workflow-merge.png)
+
