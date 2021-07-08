@@ -40,3 +40,9 @@ The workflow that GitHub has defined is based on using Branching and Pull Reques
 
   ![](images/workflow-merge.png)
 
+<h2> <a name = "deployment"></a>DEPLOYMENT</h2>
+
+After the changes have been made, and we've made sure they are working on the computer, we can deploy the work. 
+
+At Le Wagon they use [Heroku](https://www.heroku.com/), which hosts the code in the cloud so that the content is visible to customers accessing the site.
+
