@@ -62,3 +62,7 @@ A tool to automatically deploy at every change of the master branch.
 ![](images/deployment-automatic-deploys.png)
 
 ![](images/deployment-merge-button.png)
+
+With this kind of process, we can ship really often. But this can cause some problems. For example, if you have 10 deploys, some might break.
+
+![](images/deployment-break.png)
