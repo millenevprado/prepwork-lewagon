@@ -2,6 +2,28 @@
 
 Workshop video: [Technical Workflow for a Startup](https://www.youtube.com/watch?v=iZkP9rcEJEM&t=12s)
 
+## CONTENTS
+
+[STARTUP](#startup)
+
+[VERSIONING](#versioning)
+
+[WORKFLOW](#workflow)
+
+[DEPLOYMENT](#deployment)
+
+[TESTING](#testing)
+
+[CONTINUOUS DEPLOYMENT](#continuous-deployment)
+
+[BACKUPS](#backups)
+
+[MONITORING](#monitoring)
+
+[ISSUE TRACKER](#issue-tracker)
+
+[ADVICES FROM A DEVELOPER](#advices-from-a-developer)
+
 <h2> <a name = "startup"></a>STARTUP</h2>
 
 A startup is a temporary organization formed to search for a repeatable and scalable business model (STEVE BLANK, 2010). Once you find a business model, you're no longer a startup.
