@@ -72,11 +72,6 @@ At Le Wagon they use [Heroku](https://www.heroku.com/), which hosts the code in 
 
 In the GitHub workflow, we have a rule, which must be respected: "**ANYTHING IN THE MASTER BRANCH IS DEPLOYABLE**." When we merge the code into the master, we have to make sure the code is running correctly.
 
-### Continuous Deployment
-
-- Deploy your app in production with quick command lines.
-- Continuous delivery ensures minimal impact from bugs, and fast feedback from users.
-
 ### Automated Deployment
 
 A tool to automatically deploy at every change of the master branch. 
