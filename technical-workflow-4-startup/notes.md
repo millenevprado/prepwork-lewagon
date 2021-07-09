@@ -75,5 +75,45 @@ How can we prevent breaking things? We can prevent TESTING!
 
 When we have a site with many features, we can write a code to automate the test and check when a change is made (a new feature is added), if this change hasn't affected any of the other features. **The best practice is to write a test code to every feature**.
 
+- Never push your code without testing! ⚠️
+- Implement Test-Driven Development to avoid huge future technical debt.
+- Implement bug tracking and reporting.
+
 ### Travis CI
 
+Travis CI automatically test every commit pushed on every branch. We get a feedback inside the pull request if we broke something (visual feedback: green and red button).
+
+<h2> <a name = "continuous-deployment"></a>CONTINUOUS DEPLOYMENT</h2>
+
+- Deploy your app in production with quick command lines.
+- Continuous delivery ensures minimal impact from bugs, and fast feedback from users.
+
+"The key test is that a business sponsor could request that the current development version of the software can be deployed into production at a moment's notice - and nobody would bat an eyelid, let alone panic."
+
+### Advantages
+
+- Reduced deployment risk - because you don't deploy a lot of stuff at once.
+- Real sense of progress (done - the code is in the hand of the end user, the customer)
+- User feedback
+
+<h2> <a name = "backups"></a>BACKUPS</h2>
+
+When we make a change to the code and break something, for example, we can rollback and go back to the code that was working. However, when we have a database and, for example, we delete a column, when we rollback that column does not come back, so it is necessary to have a **backup for the database**. That way we can restore the data.
+
+Prevent the loss of data with automatic backups of your database.
+
+<h2> <a name = "monitoring"></a>MONITORING</h2>
+
+It consists of checking if the website is working correctly, and if it is always working.
+
+![](images/monitoring.png)
+
+This software updates your page every 5 seconds and if the site is down it sends you an email. But sometimes more information is needed, so there are software that detect errors, such as raygun.
+
+![](images/monitoring-raygun.png)
+
+<h2> <a name = "issue-tracker"></a>ISSUE TRACKER</h2>
+
+Every time you see a bug you need a place to tell someone there is a bug. 
+
+Embrace simplicity!
