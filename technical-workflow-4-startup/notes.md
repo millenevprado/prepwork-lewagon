@@ -117,3 +117,11 @@ This software updates your page every 5 seconds and if the site is down it sends
 Every time you see a bug you need a place to tell someone there is a bug. 
 
 Embrace simplicity!
+
+<h2> <a name = "advices-from-a-developer"></a>ADVICES FROM A DEVELOPER</h2>
+
+- Resist meta-work (when we stop to talk about work and how we're going to do the work)
+- Avoid meetings
+- Write everything (like in slack)
+- Embrace asynchronicity
+- Don't pull me from the zone
