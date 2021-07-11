@@ -36,6 +36,8 @@
 
 [ASYNC AWAIT](#async-await)
 
+[REQUESTS](#requests)
+
 <h2> <a name = "introduction-js"></a>INTRODUCTION TO JAVASCRIPT </h2>
 
 ### Console
@@ -3290,3 +3292,149 @@ async function asyncPromAll() {
 In our above example, we `await` the resolution of a `Promise.all()`. This `Promise.all()` was invoked with an argument array containing four promises (returned from required-in functions). Next, we loop through our `resultArray`, and log each item to the console. The first element in `resultArray` is the resolved value of the `asyncTask1()` promise, the second is the value of the `asyncTask2()` promise, and so on.
 
 `Promise.all()` allows us to take advantage of asynchronicity— each of the four asynchronous tasks can process concurrently. `Promise.all()` also has the benefit of *failing fast*, meaning it won’t wait for the rest of the asynchronous actions to complete once any one has rejected. As soon as the first promise in the array rejects, the promise returned from `Promise.all()` will reject with that reason. As it was when working with native promises, `Promise.all()` is a good choice if multiple asynchronous tasks are all required, but none must wait for any other before executing.
+
+<h2> <a name = "requests"></a>REQUESTS</h2>
+
+Have you ever wondered what happens after you click a “Submit” button on a web page? For instance, if you are submitting information, where does the information go? How is the information processed? The answer to the previous questions revolves around *HTTP requests*.
+
+There are many types of HTTP requests. The four most commonly used types of HTTP requests are GET, POST, PUT, and DELETE.
+
+With a GET request, we’re retrieving, or *getting*, information from some source (usually a website). For a POST request, we’re *posting* information to a source that will process the information and send it back.
+
+We’ll use the Datamuse API for GET requests and the Rebrandly URL Shortener API for POST requests. To complete the exercise on POST, make sure you create a Rebrandly API Key by following the instructions in the article below:
+
+- [Codecademy Articles: Rebrandly URL Shortener API](https://www.codecademy.com/articles/rebrandly-signup) .
+
+### HTTP Requests
+
+One of JavaScript’s greatest assets is its non-blocking properties, or that it is an *asynchronous* language.
+
+Websites, like newspaper websites, take advantage of these non-blocking properties to provide a better user experience. Generally, a site’s code is written so that users don’t have to wait for a giant image to load before being allowed to read the actual article—rather, that text is rendered first and then the image can load in the background.
+
+JavaScript uses an *event loop* to handle asynchronous function calls. When a program is run, function calls are made and added to a stack. The functions that make requests that need to wait for servers to respond then get sent to a separate queue. Once the stack has cleared, then the functions in the queue are executed.
+
+Web developers use the event loop to create a smoother browsing experience by deciding when to call functions and how to handle asynchronous events. We’ll be exploring one system of technologies called Asynchronous JavaScript and XML, or AJAX.
+
+To read more about the event loop, read the MDN documentation:
+
+- [MDN Documentation: Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+
+### XHR GET Requests 
+
+Asynchronous JavaScript and XML (AJAX), enables requests to be made after the initial page load. Initially, AJAX was used only for XML formatted data, now it can be used to make requests that have many different formats.
+
+[MDN Documentation: Extensible Markup Language (XML)](https://developer.mozilla.org/en-US/docs/XML_introduction).
+
+Similarly, the XMLHttpRequest (XHR) API, named for XML, can be used to make many kinds of requests and supports other forms of data.
+
+Remember, we use GET to retrieve data from a source. Take a look at the boilerplate code in the diagram to see how to make an XHR GET request.
+
+![](images/requests-xhr-get.png)
+
+A query string contains additional information to be sent with a request. The Datamuse API allows us to retrieve more specific data with query strings attached to the request URL.
+
+- [Wiki: query string](https://en.wikipedia.org/wiki/Query_string)
+
+A query string is separated from the URL using a `?` character. After `?`, you can then create a parameter which is a key value pair joined by a `=`. Examine the example below:
+
+```
+'https://api.datamuse.com/words?key=value'
+```
+
+If you want to add an additional parameter you will have to use the `&` character to separate your parameters. Like so:
+
+```
+'https://api.datamuse.com/words?key=value&anotherKey=anotherValue'
+```
+
+### XHR POST Requests
+
+The major difference between a GET request and POST request is that a POST request requires additional information to be sent through the request. This additional information is sent in the *body* of the post request.
+
+![](images/requests-xhr-post.png)
+
+- The `XMLHttpRequest` object is used in JavaScript to interact with servers.
+- The URL will direct the request to the correct server.
+- `JSON.stringify()` will convert a value to a JSON string. By converting the value to a string, we can then send the data to a server.
+- `.onreadystatechange` will contain the event handler that will be called when `xhr`‘s state changes.
+- `.open()` creates a new request and the arguments passed in determine what type of request is being made and where it’s being made to.
+- `.send()` will send the request to the server.
+
+### Introduction to Requests with ES6
+
+Many of our web page interactions rely on asynchronous events, so managing these events is essential to good web development.
+
+To make asynchronous event handling easier, *promises* were introduced in JavaScript in ES6:
+
+- [Mozilla Development Network: Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+A promise is an object that handles asynchronous data. A promise has three states:
+
+- *pending* : when a promise is created or waiting for data.
+- *fulfilled* : the asynchronous operation was handled successfully.
+- *rejected* : the asynchronous operation was unsuccessful.
+
+The great thing about promises is that once a promise is fulfilled or rejected, you can chain an additional method to the original promise.
+
+In this lesson, we will explain how to use `fetch()`, which uses promises to handle requests. Then, we will simplify requests using `async` and `await`.
+
+### fetch() GET Requests
+
+The first type of requests we’re going to tackle are GET requests using `fetch()`
+
+- [MDN: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+
+The `fetch()` function:
+
+- Creates a request object that contains relevant information that an API needs.
+- Sends that request object to the API endpoint provided.
+- Returns a promise that ultimately resolves to a response object, which contains the status of the promise with information the API sent back.
+
+![](images/requests-fetch-get.png)
+
+- The reason we’re testing the `ok` property of the response object is that it will be a Boolean value. If there were no errors `response.ok` will be `true` and then your code will return `response.json()`.
+
+### fetch() POST Requests
+
+Now, you’re going to learn how to use `fetch()` to construct POST requests! 
+
+![](images/requests-fetch-post.png)
+
+Notice that the initial call takes two arguments: an endpoint and an object that contains information needed for the POST request. The rest of the request is identical to the GET request.
+
+### async GET Requests
+
+Let’s take a minute to appreciate what you’ve accomplished so far:
+
+- used `fetch()` to make GET and POST requests.
+- check the status of the responses coming back
+- catch errors that might possibly arise
+- taking successful responses and rendering it on the webpage
+
+That is fantastic! It’s the basis of how the internet works!
+
+In the following exercises, we’re going to take what you’ve learned about chaining Promises and make it simpler using functionality introduced in ES8: `async` and `await`. You read that right, you did the hard part already, now it’s time to make it easier.
+
+The structure for this request will also be slightly different. Notice the new keywords `async` and `await`, as well as the `try` and `catch` statements.
+
+![](images/requests-async-get.png)
+
+### async POST Requests
+
+As with the other GET and POST requests that you’ve been making, an `async` POST request requires more information. Take a look at the diagram. We still have the same structure of using `try` and `catch` as before. But, in the `fetch()` call, we now have to include an additional argument that contains more information like `method` and `body`.
+
+![](images/requests-async-post.png)
+
+### Review Requests
+
+Let’s recap on the concepts covered in the previous exercises:
+
+1. GET and POST requests can be created a variety of ways.
+2. Use AJAX to asynchronously request data from APIs. `fetch()` and `async`/`await` are new functionalities developed in ES6 (promises) and ES8 respectively.
+3. Promises are a new type of JavaScript object that represent data that will eventually be returned from a request.
+4. `fetch()` is a web API that can be used to create requests. `fetch()` will return promises.
+5. We can chain `.then()` methods to handle promises returned by `fetch()`.
+6. The `.json()` method converts a returned promise to a JSON object.
+7. `async` is a keyword that is used to create functions that will return promises.
+8. `await` is a keyword that is used to tell a program to continue moving through the message queue while a promise resolves.
+9. `await` can only be used within functions declared with `async`.
