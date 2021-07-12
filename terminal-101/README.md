@@ -11,5 +11,10 @@ Workshop video: [Terminal 101](https://www.youtube.com/watch?v=Wxm7XrqPgVE&t=1s)
 - `touch` 👉 creates a new file
 - `.` 👉 refers to current directory
 - `..` 👉 refers to parent directory
+- `rm -rf` 👉 remove file/directory
+- `Ctrl + l` 👉 clean the terminal
+- `code .` 👉 opens VS Code
+- `cat` 👉 shows the file content
+- `mv source destination` 👉 (short from **m**o**v**e) is used to rename and move and files and directories from one location to another
 
 >  Note: always name your files and folders in `lower_snake_case`
